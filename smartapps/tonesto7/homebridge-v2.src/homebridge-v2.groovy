@@ -204,7 +204,7 @@ def defineDevicesPage() {
             paragraph "NOTE: Please do not select a device here and then again in another input below."
             paragraph "Each category below will adjust the device attributes to make sure they are recognized as the desired device type under HomeKit", state: "complete"
             input "lightList", "capability.switch", title: "Lights: (${lightList ? lightList?.size() : 0} Selected)", multiple: true, submitOnChange: true, required: false, image: getAppImg("light_on")
-            input "garageList", "capability.garageDoorControl", title: "Garage Doors: (${garageList ? garageList?.size() : 0} Selected)", multiple: true, submitOnChange: true, required: false, image: getAppImg("garage_door")
+            input "garageList", "capability.DoorControl", title: "Garage Doors: (${garageList ? garageList?.size() : 0} Selected)", multiple: true, submitOnChange: true, required: false, image: getAppImg("garage_door")
             input "buttonList", "capability.button", title: "Buttons: (${buttonList ? buttonList?.size() : 0} Selected)", multiple: true, submitOnChange: true, required: false, image: getAppImg("button")
             input "speakerList", "capability.switch", title: "Speakers: (${speakerList ? speakerList?.size() : 0} Selected)", multiple: true, submitOnChange: true, required: false, image: getAppImg("media_player")
             input "shadesList", "capability.windowShade", title: "Window Shades: (${shadesList ? shadesList?.size() : 0} Selected)", multiple: true, submitOnChange: true, required: false, image: getAppImg("window_shade")
@@ -432,7 +432,7 @@ def deviceDebugPage() {
             if(!debug_switch && !debug_sensor && !debug_garage && !debug_tstat)
                 input "debug_other", "capability.refresh", title: "Others Devices: ", multiple: false, submitOnChange: true, required: false, image: getAppImg("devices2")
             if(!debug_sensor && !debug_other && !debug_switch)
-                input "debug_garage", "capability.garageDoorControl", title: "Garage Doors: ", multiple: false, submitOnChange: true, required: false, image: getAppImg("garage_door")
+                input "debug_garage", "capability.DoorControl", title: "Garage Doors: ", multiple: false, submitOnChange: true, required: false, image: getAppImg("garage_door")
             if(!debug_sensor && !debug_other && !debug_switch && !debug_garage)
                 input "debug_tstat", "capability.thermostat", title: "Thermostats: ", multiple: false, submitOnChange: true, required: false, image: getAppImg("thermostat")
             if(debug_other || debug_sensor || debug_switch || debug_garage || debug_tstat) {
