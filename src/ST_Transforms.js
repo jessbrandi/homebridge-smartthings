@@ -164,7 +164,8 @@ module.exports = class Transforms {
                         return Characteristic.CurrentHeatingCoolingState.COOL;
                     case "pending heat":
                     case "heating":
-                        return Characteristic.CurrentHeatingCoolingState.HEAT;
+                    case "heat":
+                                return Characteristic.CurrentHeatingCoolingState.HEAT;
                     default:
                         // The above list should be inclusive, but we need to return something if they change stuff.
                         // TODO: Double check if Smartthings can send "auto" as operatingstate. I don't think it can.
