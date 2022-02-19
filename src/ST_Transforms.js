@@ -348,8 +348,8 @@ module.exports = class Transforms {
     }
 
     thermostatSupportedModes(devData) {
-        let hasHeatSetpoint = (devData.attributes.heatingSetpoint !== undefined || devData.attributes.heatingSetpoint !== null);
-        let hasCoolSetpoint = (devData.attributes.coolingSetpoint !== undefined || devData.attributes.coolingSetpoint !== null);
+        let hasHeatSetpoint = (devData.attributes.heatingSetpoint !== undefined && devData.attributes.heatingSetpoint !== null);
+        let hasCoolSetpoint = (devData.attributes.coolingSetpoint !== undefined && devData.attributes.coolingSetpoint !== null);
         let sModes = devData.attributes.supportedThermostatModes || [];
         let validModes = [Characteristic.TargetHeatingCoolingState.OFF];
         if ((sModes.length && sModes.includes("heat")) || sModes.includes("emergency heat") || hasHeatSetpoint)
